@@ -67,16 +67,6 @@ const images = [
 const gallery = document.querySelector(".gallery");
 let currentImageInstance = null;
 
-const applyGalleryStyles = (gallery) => {
-    Object.assign(gallery.style, {
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        gap: "24px",
-        listStyle: "none",
-    });
-};
-
 const createImageMarkup = ({ preview, original, description }) => {
     return `
       <li class="gallery-item" style="flex: 1 0 calc((100% - 48px) / 3);">
@@ -90,6 +80,16 @@ const createImageMarkup = ({ preview, original, description }) => {
           />
         </a>
       </li>`;
+};
+
+const applyGalleryStyles = (gallery) => {
+  Object.assign(gallery.style, {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: "24px",
+      listStyle: "none",
+  });
 };
 
 const renderGallery = (images) => {
